@@ -63,7 +63,7 @@ router.get('/', async (req, res) => {
 
 ❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒
 
-*ANYWAY MD SESSION CONNECTED*
+*MATRIX MD SESSION CONNECTED*
 
 ❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒
 `
