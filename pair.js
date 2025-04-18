@@ -60,20 +60,17 @@ router.get('/', async (req, res) => {
                let FLASH_MD_TEXT = `
 *𝐒𝐄𝐒𝐒𝐈𝐎𝐍 𝐂𝐎𝐍𝐍𝐄𝐂𝐓𝐄𝐃*
 
-❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒
+🟣❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒🟣
 
-*CHARLE-KE MD SESSION CONNECTED*
+*CHARLES-KE VMD SESSION CONNECTED*
 
 𝐘𝐎𝐔𝐓𝐔𝐁𝐄
 https://youtube.com/@charles_odhiambo_official?si=kw62odfMmuam1JOo
 
-𝐅𝐀𝐂𝐄𝐁𝐎𝐎𝐊
-https://www.facebook.com/profile.php?id=100083389717604
-
 𝐖𝐀𝐂𝐇𝐀𝐍𝐍𝐄𝐋
 https://whatsapp.com/channel/0029Vao2hgeChq6HJ5bmlZ3K
 
-❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒
+🟡❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒🟡
 `
  await Pair_Code_By_France_King.sendMessage(Pair_Code_By_France_King.user.id,{text:FLASH_MD_TEXT},{quoted:session})
  
@@ -82,7 +79,7 @@ https://whatsapp.com/channel/0029Vao2hgeChq6HJ5bmlZ3K
         await Pair_Code_By_France_King.ws.close();
         return await removeFile('./temp/'+id);
             } else if (connection === "close" && lastDisconnect && lastDisconnect.error && lastDisconnect.error.output.statusCode != 401) {
-                    await delay(10000);
+                    await delay(10000);0mlk the first 
                     FLASH_MD_PAIR_CODE();
                 }
             });
