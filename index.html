@@ -52,8 +52,8 @@
       display: flex;
       background: rgb(10, 10, 10);
       border-radius: 1rem;
-      background: black;
-      box-shadow: black;
+      background: red;
+      box-shadow: blue;
       padding: 0.3rem;
       gap: 0.3rem;
       max-width: 300px;
@@ -144,9 +144,9 @@
         <div id="text">
           <i class="fa fa-user"></i>
           <p>
-            <h3 class="centered-text">CHARLE-KE SESSION SCANNER</h3>
+            <h3 class="centered-text">CHARLESKE-VMD SESSION SCANNER</h3>
             <br>
-            <h6 style="font-family: sans-serif; font-weight: bold;line-height: 2rem;">Made by Charlies ke</h6>
+            <h6 style="font-family: sans-serif; font-weight: bold;line-height: 2rem;">Made by Charles ke</h6>
             <h6 style=" color: #EF6C33;">Enter Your Number with your Country Code.</h6>
             <div class="input-container">
               <input placeholder="254XXXXXXXXX" type="text" id="number"  name="">
@@ -174,7 +174,7 @@
       let obj = document.getElementById("copy");
       await navigator.clipboard.writeText(obj.innerText.replace('CODE: ', ''));
       obj.innerText = "COPIED";
-      obj.style = "color:Blue;font-weight:bold";
+      obj.style = "color:pink;font-weight:bold";
       obj.size = "5";
       setTimeout(() => {
         obj.innerText = text;
