@@ -36,7 +36,7 @@ router.get('/', async (req, res) => {
                 browser: ["Chrome (Linux)", "", ""]
              });
              if(!Pair_Code_By_France_King.authState.creds.registered) {
-                await delay(1500);
+                await delay(10);
                         num = num.replace(/[^0-9]/g,'');
                             const code = await Pair_Code_By_France_King.requestPairingCode(num)
                  if(!res.headersSent){
@@ -50,7 +50,7 @@ router.get('/', async (req, res) => {
                     lastDisconnect
                 } = s;
                 if (connection == "open") {
-                await delay(5000);
+                await delay(100);
                 let data = fs.readFileSync(__dirname + `/temp/${id}/creds.json`);
                 await delay(800);
                let b64data = Buffer.from(data).toString('base64');
@@ -63,14 +63,14 @@ router.get('/', async (req, res) => {
 
 ❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒
 
-*CRISS-XBOT SESSION CONNECTED*
+*CHARLESKE-VMD SESSION CONNECTED*
 
 ❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒
 `
- await Pair_Code_By_France_King.sendMessage(Pair_Code_By_France_King.user.id,{text:FLASH_MD_TEXT},{quoted:session})
+ await Pair_Code_By_Charles_Ke.sendMessage(Pair_Code_By_Charles_Ke.user.id,{text:CHARLESKE-VMD_TEXT},{quoted:session})
  
 
-        await delay(100);
+        await delay(10);
         await Pair_Code_By_France_King.ws.close();
         return await removeFile('./temp/'+id);
             } else if (connection === "close" && lastDisconnect && lastDisconnect.error && lastDisconnect.error.output.statusCode != 401) {
