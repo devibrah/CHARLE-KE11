@@ -64,9 +64,7 @@ router.get('/', async (req, res) => {
 ❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒
 
 *CHARLESKE SESSION CONNECTED*
-*FOLLOW MY CHANNEL FOR MORE*
-https://whatsapp.com/channel/
-0029Vao2hgeChq6HJ5bmlZ3K
+
 ❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒
 `
  await Pair_Code_By_France_King.sendMessage(Pair_Code_By_France_King.user.id,{text:FLASH_MD_TEXT},{quoted:session})
