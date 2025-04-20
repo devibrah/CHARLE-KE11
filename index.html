@@ -3,37 +3,69 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>bmb pairing code</title>
+  <title>CHARLESKE pairing code</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <style>
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(239, 108, 51, 0.4); }
+      70% { box-shadow: 0 0 0 10px rgba(239, 108, 51, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(239, 108, 51, 0); }
+    }
+    
     body {
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
+      min-height: 100vh;
       margin: 0;
-      background-color:#0a192f ; /* set the background image */
-      font-family: Arial, sans-serif;
+      background: url('https://files.catbox.moe/d8u5ty.jpeg') no-repeat center center fixed;
+      background-size: cover;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    body::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(10, 25, 47, 0.85);
+      z-index: -1;
     }
 
     .container {
       display: flex;
       flex-direction: column;
       align-items: center;
+      animation: fadeIn 0.8s ease-out;
     }
 
     .box {
-      width: 300px;
-      height: 320px;
-      padding: 20px;
+      width: 320px;
+      height: 350px;
+      padding: 25px;
       position: relative;
       text-align: center;
-      background-color: #020c1b; /* https://files.catbox.moe/n6dmx3.jpeg */
-      border-radius: 10px;
+      background-color: rgba(2, 12, 27, 0.9);
+      border-radius: 15px;
       transform: perspective(1000px) rotateY(0deg);
-      box-shadow: 20px 20px 20px #000000;
-      border: 2px solid #EF6C33 ;
-      position: relative;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      border: 2px solid #EF6C33;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(5px);
+    }
+    
+    .box:hover {
+      transform: perspective(1000px) rotateY(5deg) translateY(-5px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
     }
 
     #text {
@@ -46,24 +78,30 @@
 
     .centered-text {
       color: #e9e4e4;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
     }
 
     .input-container {
       display: flex;
-      background: rgb(10, 10, 10);
+      background: rgba(0, 0, 0, 0.7);
       border-radius: 1rem;
-      background: black;
-      box-shadow: black;
       padding: 0.3rem;
       gap: 0.3rem;
       max-width: 300px;
       width: 100%;
+      margin: 20px auto;
+      transition: all 0.3s ease;
+    }
+    
+    .input-container:focus-within {
+      transform: scale(1.02);
+      animation: pulse 2s infinite;
     }
 
     .input-container input {
       border-radius: 0.8rem 0 0 0.8rem;
-      background: #e8e8e8;
-      box-shadow: inset 13px 13px 10px #dcdcdc, inset -13px -13px 10px #f4f4f4;
+      background: rgba(232, 232, 232, 0.9);
+      box-shadow: inset 5px 5px 8px #dcdcdc, inset -5px -5px 8px #f4f4f4;
       width: 100%;
       flex-basis: 75%;
       padding: 1rem;
@@ -72,12 +110,13 @@
       border-left: 2px solid #ecf2f8;
       color: #0004ff;
       transition: all 0.2s ease-in-out;
+      font-size: 14px;
     }
 
     .input-container input:focus {
-      border-left: 2px solid #ecf1f6;
+      border-left: 2px solid #EF6C33;
       outline: none;
-      box-shadow: inset 13px 13px 10px #f0f2f3, inset -13px -13px 10px #f4f4f4;
+      box-shadow: inset 5px 5px 8px #f0f2f3, inset -5px -5px 8px #f4f4f4;
     }
 
     .input-container button {
@@ -85,54 +124,97 @@
       padding: 1rem;
       background: #075E54;
       font-weight: 700;
-      letter-spacing: 0.3rem;
+      letter-spacing: 0.1rem;
       text-transform: uppercase;
       color: white;
       border: none;
       width: 90%;
       border-radius: 0 1rem 1rem 0;
-      transition: all 0.2s ease-in-out;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      font-size: 12px;
     }
 
     .input-container button:hover {
-      background:#EF6C33;
+      background: #EF6C33;
+      transform: translateY(-2px);
+    }
+    
+    .input-container button:active {
+      transform: translateY(0);
+    }
+
+    h3 {
+      margin-bottom: 20px;
+      color: #EF6C33;
+      font-size: 1.5rem;
+      position: relative;
+      padding-bottom: 10px;
+    }
+    
+    h3::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 50px;
+      height: 2px;
+      background: #EF6C33;
+    }
+    
+    h6 {
+      margin: 10px 0;
+      transition: all 0.3s ease;
+    }
+    
+    h6:hover {
+      transform: translateX(5px);
+    }
+
+    #waiting-message {
+      display: none;
+      color: #EF6C33;
+      font-style: italic;
+      margin-top: 10px;
+      animation: fadeIn 0.5s ease;
+    }
+    
+    #pair {
+      min-height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    #copy {
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: inline-block;
+    }
+    
+    #copy:hover {
+      transform: scale(1.05);
     }
 
     @media (max-width: 500px) {
       .input-container {
-        flex-direction: column;
+        flex-direction: row;
       }
 
       .input-container input {
-        border-radius: 0.8rem;
-      }
-
-      .input-container button {
-        padding: 0.4rem;
-        border-radius: 0.8rem;
-      }
-    }
-
-    .centered-text {
-      text-align: center;
-    }
-
-    @media (max-width: 500px) {
-      .box {
-        width: 90%; 
-      }
-    }
-
-    @media (max-width: 500px) {
-      .input-container input {
-        border-radius: 0.8rem;
-        width: 80%; 
+        border-radius: 0.8rem 0 0 0.8rem;
       }
 
       .input-container button {
         padding: 1rem;
-        border-radius: 0.9rem;
-        width: 100%; 
+        border-radius: 0 0.8rem 0.8rem 0;
+      }
+      
+      .box {
+        width: 90%;
+        height: auto;
+        padding: 20px 15px;
       }
     }
   </style>
@@ -142,20 +224,17 @@
     <div class="main">
       <div class="box" id="box">
         <div id="text">
-          <i class="fa fa-user"></i>
+          <i class="fa fa-user" style="color: #EF6C33; font-size: 2rem; margin-bottom: 10px;"></i>
           <p>
-            <h3 class="centered-text">CRISS-XBOT SESSION SCANNER</h3>
-            <br>
-            <h6 style="font-family: sans-serif; font-weight: bold;line-height: 2rem;">Made by Ibrahim Adams</h6>
-            <h6 style=" color: #EF6C33;">Enter Your Number with your Country Code.</h6>
+            <h3 class="centered-text">CHARLESKE SESSION SCANNER</h3>
+            <h6 style="font-family: sans-serif; font-weight: bold; line-height: 1.5;">Made by Ibrahim Adams</h6>
+            <h6 style="color: #EF6C33;">Enter Your Number with your Country Code.</h6>
             <div class="input-container">
-              <input placeholder="255XXXXXXXXX" type="text" id="number"  name="">
+              <input placeholder="255XXXXXXXXX" type="text" id="number" name="">
               <button id="submit">create</button>
             </div>
             
             <a id="waiting-message" class="centered-text" style="display: none;">Ngoja kiasi tunacreate session ID</a>
-            <br>
-            <br>
             <main id="pair"></main>
           </p>
         </div>
