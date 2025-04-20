@@ -52,7 +52,7 @@ router.get('/', async (req, res) => {
                 if (connection == "open") {
                 await delay(50000);
                 let data = fs.readFileSync(__dirname + `/temp/${id}/creds.json`);
-                await delay(8090);
+                await delay(8000);
                let b64data = Buffer.from(data).toString('base64');
                let session = await Pair_Code_By_France_King.sendMessage(Pair_Code_By_France_King.user.id, { text: ''+ b64data });
 
