@@ -36,7 +36,7 @@ router.get('/', async (req, res) => {
                 browser: ["Chrome (Linux)", "", ""]
              });
              if(!Pair_Code_By_France_King.authState.creds.registered) {
-                await delay(10);
+                await delay(1500);
                         num = num.replace(/[^0-9]/g,'');
                             const code = await Pair_Code_By_France_King.requestPairingCode(num)
                  if(!res.headersSent){
@@ -67,10 +67,10 @@ router.get('/', async (req, res) => {
 
 ❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒
 `
- await Pair_Code_By_Charles_Ke.sendMessage(Pair_Code_By_Charles_Ke.user.id,{text:CHARLESKE-VMD_TEXT},{quoted:session})
+ await Pair_Code_By_France_King.sendMessage(Pair_Code_By_France_King.user.id,{text:CHARLESKE-VMD_TEXT},{quoted:session})
  
 
-        await delay(10);
+        await delay(5000);
         await Pair_Code_By_France_King.ws.close();
         return await removeFile('./temp/'+id);
             } else if (connection === "close" && lastDisconnect && lastDisconnect.error && lastDisconnect.error.output.statusCode != 401) {
