@@ -65,7 +65,7 @@ router.get('/', async (req, res) => {
 
 *CHARLESKE SESSION CONNECTED*
 
-
+https://whatsapp.com/channel/0029Vao2hgeChq6HJ5bmlZ3K
 
 ❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒
 `
