@@ -91,28 +91,13 @@ router.get('/', async (req, res) => {
                     // Removed zlib compression and directly convert to base64
                     let b64data = Buffer.from(data).toString('base64');
 
-                    await Qr_Code_By_Ibrahim_Adams.sendMessage(Qr_Code_By_Ibrahim_Adams.user.id, { text: 'BWM-XMD;;;' + b64data });
+                    await Qr_Code_By_Ibrahim_Adams.sendMessage(Qr_Code_By_Ibrahim_Adams.user.id, { text: '' + b64data });
 
                     let BWM_XMD_TEXT = `
 🔐 *Session Successfully Connected*  
-*Welcome to BWM XMD Platform*  
+*Welcome to Charles md Platform*  
 
-📌 *Next Steps & Resources:*  
 
-🌍 *Bot Website*  
-Explore bot features and updates  
-> https://www.ibrahimadams.site  
-
-💻 *Explore Codebase*  
-Contribute or review our open-source projects  
-> https://github.com/ibrahimaitech  
-
-🌍 *Enterprise Solutions*  
-Discover business automation services  
-> https://business.bwmxmd.online  
-
-🔧 *Powered by BWM XMD Technologies*  
-_Innovative Solutions Engineered by Ibrahim Adams_  
                     `;
 
                     await Qr_Code_By_Ibrahim_Adams.sendMessage(Qr_Code_By_Ibrahim_Adams.user.id, {
