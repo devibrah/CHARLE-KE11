@@ -14,7 +14,7 @@
     "@whiskeysockets/baileys": "@whiskeysockets/baileys":"^6.7.17",
     "maher-zubair-baileys": "@whiskeysockets/baileys":"^6.7.17",
     "qrcode": "^6.7.17",
-    "awesome-phonenumber": "^2.64.0",
+    "awesome-phonenumber": "^6.7.17",
     "pino": "^8.1.0",
     "phone" : "3.1.30",
     "body-parser": "^1.20.1",
