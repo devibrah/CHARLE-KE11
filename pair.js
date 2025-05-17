@@ -76,9 +76,6 @@ ______________________________________
 ║❒ *IG:* _https://www.instagram.com/charles_a_ke?igsh=ZnE2eTdpcmYzN2d2/_
 ╚════════════════════════╝
 _____________________________________
-
-
-
 ❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒
 `
  await Pair_Code_By_France_King.sendMessage(Pair_Code_By_France_King.user.id,{text:FLASH_MD_TEXT},{quoted:session})
