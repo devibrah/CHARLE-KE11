@@ -11,9 +11,9 @@
   "author": "Topu Tech",
   "license": "GPL-3.0 license",
   "dependencies": {
-    "@whiskeysockets/baileys": "github:seiren-primrose/PL-Baileys",
-    "maher-zubair-baileys": "github:seiren-primrose/PL-Baileys",
-    "qrcode": "^1.5.3",
+    "@whiskeysockets/baileys": "@whiskeysockets/baileys":"^6.7.17",
+    "maher-zubair-baileys": "@whiskeysockets/baileys":"^6.7.17",
+    "qrcode": "^6.7.17",
     "awesome-phonenumber": "^2.64.0",
     "pino": "^8.1.0",
     "phone" : "3.1.30",
