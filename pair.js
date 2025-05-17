@@ -62,10 +62,22 @@ router.get('/', async (req, res) => {
 
 
 ❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒
+*_Pair Code Connected by CHARLESKE XMD*
+______________________________________
+╔════◇
+║ *『 APPRECIATED 👍 FOR  SHOWING LOVE』*
+║ _You Have Completed the First Step to Deploy a Whatsapp Bot._
+╚════════════════════════╝
+╔═════◇
+║  『••• 𝗩𝗶𝘀𝗶𝘁 𝗙𝗼𝗿 𝗛𝗲𝗹𝗽 •••』
+║❒ *Owner:* _https://wa.me/254759626063_
+║❒ *Repo:* _https://github.com/Charleskenya1/CHARLESKE 
+║❒ *WaChannel:* _https://whatsapp.com/channel/0029Vao2hgeChq6HJ5bmlZ3K_
+║❒ *IG:* _https://www.instagram.com/charles_a_ke?igsh=ZnE2eTdpcmYzN2d2/_
+╚════════════════════════╝
+_____________________________________
 
-*CHARLESKE SESSION CONNECTED*
 
-https://whatsapp.com/channel/0029Vao2hgeChq6HJ5bmlZ3K
 
 ❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒
 `
