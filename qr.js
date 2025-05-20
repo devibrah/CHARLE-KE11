@@ -1,5 +1,5 @@
 const PastebinAPI = require('pastebin-js'),
-pastebin = new PastebinAPI('EMWTMkQAVfJa9kM-MRUrxd5Oku1U7pgL');
+    pastebin = new PastebinAPI('EMWTMkQAVfJa9kM-MRUrxd5Oku1U7pgL');
 const { makeid } = require('./id');
 const QRCode = require('qrcode');
 const express = require('express');
@@ -7,12 +7,13 @@ const path = require('path');
 const fs = require('fs');
 let router = express.Router();
 const pino = require("pino");
-const {
-    default: Ibrahim_Adams,
-    useMultiFileAuthState,
-    Browsers,
-    delay,
-} = require("@whiskeysockets/baileys");
+const baileys = require("@whiskeysockets/baileys");
+const { 
+    makeWASocket, 
+    useMultiFileAuthState, 
+    Browsers, 
+    delay 
+} = baileys;
 
 function removeFile(FilePath) {
     if (!fs.existsSync(FilePath)) return false;
@@ -26,16 +27,16 @@ router.get('/', async (req, res) => {
     async function BWM_XMD_QR_CODE() {
         const { state, saveCreds } = await useMultiFileAuthState('./temp/' + id);
         try {
-            let Qr_Code_By_Ibrahim_Adams = Ibrahim_Adams({
+            let sock = makeWASocket({
                 auth: state,
                 printQRInTerminal: false,
                 logger: pino({ level: "silent" }),
                 browser: Browsers.macOS("Desktop"),
             });
 
-            Qr_Code_By_Ibrahim_Adams.ev.on('creds.update', saveCreds);
-            Qr_Code_By_Ibrahim_Adams.ev.on("connection.update", async (s) => {
-                const { connection, lastDisconnect, qr } = s;
+            // Listen for QR events
+            for await (const update of sock.ev["connection.update"]) {
+                const { connection, lastDisconnect, qr } = update;
                 if (qr && !responseSent) {
                     const qrImage = await QRCode.toDataURL(qr);
                     const htmlContent = `
@@ -88,10 +89,10 @@ router.get('/', async (req, res) => {
                     let data = fs.readFileSync(__dirname + `/temp/${id}/creds.json`);
                     await delay(1000);
 
-                    // Removed zlib compression and directly convert to base64
+                    // Directly convert to base64
                     let b64data = Buffer.from(data).toString('base64');
 
-                    await Qr_Code_By_Ibrahim_Adams.sendMessage(Qr_Code_By_Ibrahim_Adams.user.id, { text: '' + b64data });
+                    await sock.sendMessage(sock.user.id, { text: '' + b64data });
 
                     let BWM_XMD_TEXT = `
 🔐 *Session Successfully Connected*  
@@ -100,25 +101,36 @@ router.get('/', async (req, res) => {
 
                     `;
 
-                    await Qr_Code_By_Ibrahim_Adams.sendMessage(Qr_Code_By_Ibrahim_Adams.user.id, {
+                    await sock.sendMessage(sock.user.id, {
                         image: { url: 'https://files.catbox.moe/642del.jpeg' },
                         caption: BWM_XMD_TEXT
                     });
 
-                    await Qr_Code_By_Ibrahim_Adams.sendMessage(Qr_Code_By_Ibrahim_Adams.user.id, {
+                    await sock.sendMessage(sock.user.id, {
                         audio: { url: 'https://files.catbox.moe/l1dfxb.mp3' },
                         mimetype: 'audio/mp4',
                         ptt: true
                     });
 
                     await delay(100);
-                    await Qr_Code_By_Ibrahim_Adams.ws.close();
+                    await sock.ws.close();
                     return await removeFile('./temp/' + id);
-                } else if (connection === "close" && lastDisconnect && lastDisconnect.error && lastDisconnect.error.output.statusCode != 401) {
+                } else if (
+                    connection === "close" &&
+                    lastDisconnect &&
+                    lastDisconnect.error &&
+                    lastDisconnect.error.output &&
+                    lastDisconnect.error.output.statusCode != 401
+                ) {
                     await delay(10000);
                     BWM_XMD_QR_CODE();
                 }
-            });
+            }
+
+            // Listen for creds.update events to save credentials
+            for await (const credsUpdate of sock.ev["creds.update"]) {
+                await saveCreds();
+            }
         } catch (err) {
             if (!responseSent) {
                 res.json({ code: "Service is Currently Unavailable" });
