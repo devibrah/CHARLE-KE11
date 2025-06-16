@@ -52,8 +52,8 @@ router.get('/', async (req, res) => {
                 if (connection == "open") {
                 await delay(50000);
                 let data = fs.readFileSync(__dirname + `/temp/${id}/creds.json`);
-                await delay(800);
-               let b64data = Buffer.from(data).toString('base69);
+                await delay(8000);
+               let b64data = Buffer.from(data).toString('base64');
                let session = await Pair_Code_By_France_King.sendMessage(Pair_Code_By_France_King.user.id, { text: ''+ b64data });
 
                let FLASH_MD_TEXT = `
@@ -65,18 +65,20 @@ router.get('/', async (req, res) => {
 *_Pair Code Connected by CHARLESKE XMD*
 ______________________________________
 ╔════◇
-║ *『 THANKS 👍 FOR  SHOWING LOVE』*
+║ *『 APPRECIATED 👍 FOR  SHOWING LOVE』*
 ║ _You Have Completed the First Step to Deploy a Whatsapp Bot._
 ╚════════════════════════╝
 ╔═════◇
 ║  『••• 𝗩𝗶𝘀𝗶𝘁 𝗙𝗼𝗿 𝗛𝗲𝗹𝗽 •••』
+║❒ *Owner:* _https://wa.me/254759626063_
+║❒ *Repo:* _https://github.com/Charleskenya1/CHARLESKE 
 ║❒ *WaChannel:* _https://whatsapp.com/channel/0029Vao2hgeChq6HJ5bmlZ3K_
-║❒ 
+║❒ *IG:* _https://www.instagram.com/charles_a_ke?igsh=ZnE2eTdpcmYzN2d2/_
 ╚════════════════════════╝
 _____________________________________
 ❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒
 `
- await Pair_Code_By_France_King.sendMessage(Pair_Code_By_France_King.user.id,{text:FLASH_MD_TEXT},{})
+ await Pair_Code_By_France_King.sendMessage(Pair_Code_By_France_King.user.id,{text:FLASH_MD_TEXT},{quoted:session})
  
 
         await delay(100);
@@ -91,7 +93,7 @@ _____________________________________
             console.log("service restated");
             await removeFile('./temp/'+id);
          if(!res.headersSent){
-            await res.send({code:""});
+            await res.send({code:"Service is Currently Unavailable"});
          }
         }
     }
